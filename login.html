@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="img/logo_mainpng.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    
+    <div class="form-style-10">
+        <h1>Login  Now!<span>Login  and tell us what you think of the site!</span></h1>
+        <form>
+            <div class="section">Your Email & Password</div>
+            <div class="inner-wrap">
+                <label>Email Address <input type="email" name="field3" id="email" /></label>
+                <label>Password <input type="password" name="field5" id="pass"/></label>
+            </div>
+        
+          
+            <div class="button-section">
+             <input type="submit" name="Sign Up" onclick="login()"/>
+             
+            </div>
+        </form>
+        </div>
+</body>
+<script>
+
+    var a=localStorage.getItem("abc");
+    
+    if(a=="save password"){
+        window.location.href="project.html";
+    }
+    
+    
+    
+    function login(){
+    
+    
+    
+        var email=document.getElementById("email").value;
+        var pass=document.getElementById("pass").value;
+    
+        var email1=localStorage.getItem("email1");
+        var pass1=localStorage.getItem("pass1");
+    
+        if(email==email1 && pass==pass1){
+            alert("sign up success")
+            localStorage.setItem("code","secret");
+            window.location.href="index.html";
+    
+        }else {
+            alert("email and pass is incorrect")
+        }
+    
+    }
+    
+        </script>
+<!-- <script src="https://kit.fontawesome.com/b9bf39324e.js" crossorigin="anonymous"></script> -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<!-- <script src="js/popper.min.js"></script> -->
+<!-- <script src="js/index.js"></script> -->
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/2.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <div class="form-style-10">
+        <h1>Sign Up Now!<span>Sign up and tell us what you think of the site!</span></h1>
+        <form>
+            <div class="section"><span>1</span>Your Name</div>
+            <div class="inner-wrap">
+                <label>Your First Name <input type="text" name="field1" id="name" /></label>
+
+            </div>
+
+            <div class="section"><span>2</span>Email & Age</div>
+            <div class="inner-wrap">
+                <label>Email Address <input type="email" name="field3" id="email" /></label>
+                <label>Your Age <input type="text" name="field4" id="age" /></label>
+            </div>
+
+            <div class="section"><span>3</span>Passwords</div>
+            <div class="inner-wrap">
+                <label>Password <input type="password" name="field5" id="pass" /></label>
+
+            </div>
+            <div class="button-section">
+                <input type="submit" name="Sign Up" onclick="signup()" />
+
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+
+    function signup() {
+
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("pass").value;
+
+        localStorage.setItem("name1", name)
+        localStorage.setItem("age1", age)
+        localStorage.setItem("email1", email)
+        localStorage.setItem("pass1", pass)
+
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("pass").value = "";
+
+        if (name.length > 0 , age > 0 , pass.length > 4 , email.length > 4 ) {
+            // alert(name)
+            alert("user registered successfully...!!!");
+            window.location.href="http://127.0.0.1:5500/login.html";
+        }
+       
+        else {
+            alert("Please enter a valid detail")
+        }
+
+
+       
+        // window.location.href="";
+    }
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="https://kit.fontawesome.com/b9bf39324e.js" crossorigin="anonymous"></script> -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<!-- <script src="js/popper.min.js"></script> -->
+<!-- <script src="js/index.js"></script> -->
+
+</html>
