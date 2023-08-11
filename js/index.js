@@ -1,7 +1,7 @@
 let ui = [
     {
         image: 'img/1.jpg',
-        name : "Chair",
+        name : "CHAIR",
         distri : "wooden chair",
         price : "$30.00",
         cart  : "ADD TO CART"
@@ -57,6 +57,9 @@ let ui = [
     }
 ]
 
+
+const display=(ui) => {
+    document.getElementById("product1").innerHTML=""
 ui.map((ele)=>{
     let div1 = document.createElement("div");
     div1.setAttribute("class", "productmainbox , col-xl-3 , col-lg-4 , col-sm-6");
@@ -89,7 +92,8 @@ ui.map((ele)=>{
     div1.append(imagebox , div2);   
     document.getElementById("product1").append(div1); 
 })
-
+}
+display(ui)
 // ui.map((ele)=>{
 //     let div1 = document.createElement("div");
 //     div1.setAttribute("class", "productmainbox , col-xl-3 , col-lg-4 , col-sm-6");
@@ -126,17 +130,20 @@ ui.map((ele)=>{
 // search   input js
 
 
-// const find = () =>{
-//     let value = document.getElementById("searchvalue").value;
-//     let data = ui.filter((val)=>val.name.includes(value.toUpperCase()));
-//     product1(data);
-// }
+const find = () =>{
+    let value = document.getElementById("searchvalue").value;
+    let data = ui.filter((val)=>val.name.includes(value.toUpperCase()));
+    console.log(data);
+    console.log(value);
+    // ui(data);
+    display(data)
+}
 
-// document.getElementById("searchvalue").addEventListener("keypress",(e)=>{
-//     if(e.key == "Enter"){
-//             find();
-//         }
-// })
+document.getElementById("searchvalue").addEventListener("keypress",(e)=>{
+    if(e.key == "Enter"){
+            find();
+        }
+})
 
 
-// document.getElementById("search").addEventListener("click",find)
+document.getElementById("search").addEventListener("click",find)
